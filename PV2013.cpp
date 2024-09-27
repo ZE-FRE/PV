@@ -1,8 +1,9 @@
-#include "PV2013.h"
+﻿#include "PV2013.h"
 #include <pthread.h>
 #include <iostream>
 #include <Windows.h>
 #include <time.h>
+#include "Semaphore.h"
 
 namespace PV2013 {
 	Semaphore plate(2), orange(0), apple(0), plate_mutex(1);
@@ -54,7 +55,6 @@ void* PV2013::daughter(void* args)
 	return NULL;
 }
 
-
 unsigned int PV2013::random()
 {
 	srand(time(0));
@@ -63,6 +63,8 @@ unsigned int PV2013::random()
 
 void PV2013::testPV2013()
 {
+	puts("2013年PV题\n");
+
 	pthread_t father_id, son_id, daughter_id;
 	pthread_create(&father_id, NULL, &father, NULL);
 	pthread_create(&son_id, NULL, &son, NULL);

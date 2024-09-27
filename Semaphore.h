@@ -1,8 +1,12 @@
-#ifndef SEMAPHORE_H_
+﻿#ifndef SEMAPHORE_H_
 #define SEMAPHORE_H_
 
 #include <semaphore.h>
 
+/*
+ * 封装信号量，使得使用方式可以与在纸上作答时的风格一样
+ * date:2024/9/27
+ */
 class Semaphore {
 
 	friend void P(Semaphore &semaphore);

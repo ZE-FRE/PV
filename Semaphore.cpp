@@ -1,4 +1,4 @@
-#include "Semaphore.h"
+﻿#include "Semaphore.h"
 #include <stdlib.h>
 
 void P(Semaphore &semaphore)

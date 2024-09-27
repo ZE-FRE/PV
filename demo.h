@@ -1,4 +1,4 @@
-#ifndef DEMO_H_
+﻿#ifndef DEMO_H_
 #define DEMO_H_
 
 void testDemo();
