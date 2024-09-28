@@ -136,6 +136,7 @@
     <ClInclude Include="include\Semaphore.h" />
     <ClInclude Include="include\semaphore_demo.h" />
     <ClInclude Include="include\ThreadLauncher.h" />
+    <ClInclude Include="include\uestc\7-5.h" />
     <ClInclude Include="include\uestc\PV2013.h" />
     <ClInclude Include="include\uestc\PV2014.h" />
     <ClInclude Include="include\uestc\PV2016.h" />
@@ -144,6 +145,10 @@
     <ClInclude Include="include\uestc\PV2020.h" />
     <ClInclude Include="include\uestc\PV2021.h" />
     <ClInclude Include="include\uestc\PV2022.h" />
+    <ClInclude Include="include\wangdao\WangdaoPart1.h" />
+    <ClInclude Include="include\wangdao\WangdaoPart2.h" />
+    <ClInclude Include="include\wangdao\WangdaoPart3.h" />
+    <ClInclude Include="include\wangdao\WangdaoPart4.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\demo.cpp" />
@@ -151,6 +156,7 @@
     <ClCompile Include="src\semaphore_demo.cpp" />
     <ClCompile Include="src\Startup.cpp" />
     <ClCompile Include="src\ThreadLauncher.cpp" />
+    <ClCompile Include="src\uestc\7-5.cpp" />
     <ClCompile Include="src\uestc\PV2013.cpp" />
     <ClCompile Include="src\uestc\PV2014.cpp" />
     <ClCompile Include="src\uestc\PV2016.cpp" />
@@ -159,6 +165,10 @@
     <ClCompile Include="src\uestc\PV2020.cpp" />
     <ClCompile Include="src\uestc\PV2021.cpp" />
     <ClCompile Include="src\uestc\PV2022.cpp" />
+    <ClCompile Include="src\wangdao\WangdaoPart1.cpp" />
+    <ClCompile Include="src\wangdao\WangdaoPart2.cpp" />
+    <ClCompile Include="src\wangdao\WangdaoPart3.cpp" />
+    <ClCompile Include="src\wangdao\WangdaoPart4.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

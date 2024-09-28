@@ -21,6 +21,12 @@
     <Filter Include="源文件\uestc">
       <UniqueIdentifier>{c34ecd01-2946-487c-9dcb-1648927a566a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\wangdao">
+      <UniqueIdentifier>{333a2a2b-2c7b-4516-a6b0-87559526eee6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\wangdao">
+      <UniqueIdentifier>{4bc18399-df31-499f-a286-80ba6f41e6c2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\uestc\PV2017.h">
@@ -58,6 +64,21 @@
     </ClInclude>
     <ClInclude Include="include\ThreadLauncher.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\uestc\7-5.h">
+      <Filter>头文件\uestc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\wangdao\WangdaoPart1.h">
+      <Filter>头文件\wangdao</Filter>
+    </ClInclude>
+    <ClInclude Include="include\wangdao\WangdaoPart2.h">
+      <Filter>头文件\wangdao</Filter>
+    </ClInclude>
+    <ClInclude Include="include\wangdao\WangdaoPart3.h">
+      <Filter>头文件\wangdao</Filter>
+    </ClInclude>
+    <ClInclude Include="include\wangdao\WangdaoPart4.h">
+      <Filter>头文件\wangdao</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +120,21 @@
     </ClCompile>
     <ClCompile Include="src\Semaphore.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\uestc\7-5.cpp">
+      <Filter>源文件\uestc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wangdao\WangdaoPart1.cpp">
+      <Filter>源文件\wangdao</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wangdao\WangdaoPart2.cpp">
+      <Filter>源文件\wangdao</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wangdao\WangdaoPart3.cpp">
+      <Filter>源文件\wangdao</Filter>
+    </ClCompile>
+    <ClCompile Include="src\wangdao\WangdaoPart4.cpp">
+      <Filter>源文件\wangdao</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
