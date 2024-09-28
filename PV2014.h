@@ -51,7 +51,6 @@ while (1) {
 }
  */
 
-#include "Semaphore.h"
 namespace PV2014 
 {
 	void* P0(void* args);

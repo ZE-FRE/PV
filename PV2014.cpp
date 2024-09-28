@@ -1,7 +1,8 @@
 #include "PV2014.h"
 #include <Windows.h>
 #include <iostream>
-#include <pthread.h>
+#include "Semaphore.h"
+#include "ThreadLauncher.h"
 
 namespace
 {
@@ -93,22 +94,5 @@ void PV2014::compute2(unsigned int product)
 
 void PV2014::testPV2014()
 {
-    puts("2014年PV题\n");
-
-    pthread_t p0_id, p1_id, p2_id;
-
-    pthread_create(&p0_id, NULL, &P0, NULL);
-    pthread_create(&p1_id, NULL, &P1, NULL);
-    pthread_create(&p2_id, NULL, &P2, NULL);
-
-    Sleep(10000);
-
-    pthread_cancel(p0_id);
-    pthread_cancel(p1_id);
-    pthread_cancel(p2_id);
-
-    pthread_join(p0_id, NULL);
-    pthread_join(p1_id, NULL);
-    pthread_join(p2_id, NULL);
-
+    StartThread("2014年PV题", { P0, P1, P2 });
 }

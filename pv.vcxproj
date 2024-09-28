@@ -144,6 +144,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="Semaphore.h" />
     <ClInclude Include="semaphore_demo.h" />
+    <ClInclude Include="ThreadLauncher.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="demo.cpp" />
@@ -158,6 +159,7 @@
     <ClCompile Include="Semaphore.cpp" />
     <ClCompile Include="semaphore_demo.cpp" />
     <ClCompile Include="Startup.cpp" />
+    <ClCompile Include="ThreadLauncher.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

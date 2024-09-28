@@ -1,9 +1,9 @@
 ﻿#include "PV2013.h"
-#include <pthread.h>
 #include <iostream>
 #include <Windows.h>
 #include <time.h>
 #include "Semaphore.h"
+#include "ThreadLauncher.h"
 
 namespace PV2013 {
 	Semaphore plate(2), orange(0), apple(0), plate_mutex(1);
@@ -37,7 +37,7 @@ void* PV2013::son(void* args)
 		std::cout << "儿子拿出一个橘子开吃" << std::endl;
 		V(plate_mutex);
 		V(plate);
-		Sleep(200);
+		Sleep(1000);
 	}
 	return NULL;
 }
@@ -63,20 +63,5 @@ unsigned int PV2013::random()
 
 void PV2013::testPV2013()
 {
-	puts("2013年PV题\n");
-
-	pthread_t father_id, son_id, daughter_id;
-	pthread_create(&father_id, NULL, &father, NULL);
-	pthread_create(&son_id, NULL, &son, NULL);
-	pthread_create(&daughter_id, NULL, &daughter, NULL);
-
-	Sleep(10000);
-
-	pthread_cancel(father_id);
-	pthread_cancel(son_id);
-	pthread_cancel(daughter_id);
-
-	pthread_join(father_id, NULL);
-	pthread_join(son_id, NULL);
-	pthread_join(daughter_id, NULL);
+	StartThread("2013年PV题", { father, son, daughter });
 }

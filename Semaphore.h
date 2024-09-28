@@ -26,7 +26,6 @@ private:
 };
 
 void P(Semaphore& semaphore);
-
 void V(Semaphore& semaphore);
 
 #endif // !SEMAPHORE_H_
