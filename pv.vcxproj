@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>D:\workspace\vs\pv\lib\pthreads-w32-2-9-1-release\Pre-built.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\workspace\vs\pv\lib\pthreads-w32-2-9-1-release\Pre-built.2\lib\x64;$(LibraryPath)</LibraryPath>
+    <LibraryPath>D:\workspace\vs\pv\lib\pthreads-w32-2-9-1-release\Pre-built.2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
