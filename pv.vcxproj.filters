@@ -15,86 +15,89 @@
     <Filter Include="源文件\demo">
       <UniqueIdentifier>{c783a30a-70c0-4511-9cc3-2fc66dc637d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\uestc">
+      <UniqueIdentifier>{2bff0a25-90b6-4409-9cdc-e2ac061453d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\uestc">
+      <UniqueIdentifier>{c34ecd01-2946-487c-9dcb-1648927a566a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="PV2013.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="include\uestc\PV2017.h">
+      <Filter>头文件\uestc</Filter>
     </ClInclude>
-    <ClInclude Include="Semaphore.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="include\uestc\PV2013.h">
+      <Filter>头文件\uestc</Filter>
     </ClInclude>
-    <ClInclude Include="demo.h">
+    <ClInclude Include="include\uestc\PV2014.h">
+      <Filter>头文件\uestc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\uestc\PV2016.h">
+      <Filter>头文件\uestc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\uestc\PV2018.h">
+      <Filter>头文件\uestc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\uestc\PV2020.h">
+      <Filter>头文件\uestc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\uestc\PV2021.h">
+      <Filter>头文件\uestc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\uestc\PV2022.h">
+      <Filter>头文件\uestc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\demo.h">
       <Filter>头文件\demo</Filter>
     </ClInclude>
-    <ClInclude Include="semaphore_demo.h">
+    <ClInclude Include="include\semaphore_demo.h">
       <Filter>头文件\demo</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
+    <ClInclude Include="include\Semaphore.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="PV2014.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="PV2016.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="PV2017.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="PV2018.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="PV2020.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="PV2021.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="PV2022.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="ThreadLauncher.h">
+    <ClInclude Include="include\ThreadLauncher.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PV2013.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="src\uestc\PV2017.cpp">
+      <Filter>源文件\uestc</Filter>
     </ClCompile>
-    <ClCompile Include="Semaphore.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="src\uestc\PV2013.cpp">
+      <Filter>源文件\uestc</Filter>
     </ClCompile>
-    <ClCompile Include="Startup.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="src\uestc\PV2014.cpp">
+      <Filter>源文件\uestc</Filter>
     </ClCompile>
-    <ClCompile Include="demo.cpp">
+    <ClCompile Include="src\uestc\PV2016.cpp">
+      <Filter>源文件\uestc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\uestc\PV2018.cpp">
+      <Filter>源文件\uestc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\uestc\PV2020.cpp">
+      <Filter>源文件\uestc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\uestc\PV2021.cpp">
+      <Filter>源文件\uestc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\uestc\PV2022.cpp">
+      <Filter>源文件\uestc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\demo.cpp">
       <Filter>源文件\demo</Filter>
     </ClCompile>
-    <ClCompile Include="semaphore_demo.cpp">
+    <ClCompile Include="src\semaphore_demo.cpp">
       <Filter>源文件\demo</Filter>
     </ClCompile>
-    <ClCompile Include="PV2014.cpp">
+    <ClCompile Include="src\Startup.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="PV2016.cpp">
+    <ClCompile Include="src\ThreadLauncher.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="PV2017.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="PV2018.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="PV2020.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="PV2021.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="PV2022.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ThreadLauncher.cpp">
+    <ClCompile Include="src\Semaphore.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

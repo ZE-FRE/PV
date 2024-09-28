@@ -1,8 +1,8 @@
-#include "PV2017.h"
 #include <Windows.h>
 #include <iostream>
-#include "Semaphore.h"
-#include "ThreadLauncher.h"
+#include "../../include/uestc/PV2017.h"
+#include "../../include/Semaphore.h"
+#include "../../include/ThreadLauncher.h"
 
 // 定义信号量
 namespace PV2017 {

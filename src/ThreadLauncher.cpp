@@ -1,9 +1,9 @@
-#include "ThreadLauncher.h"
 #include <Windows.h>
 #include <iostream>
 #include <pthread.h>
 #include <vector>
 #include <stdlib.h>
+#include "../include/ThreadLauncher.h"
 
 using namespace std;
 

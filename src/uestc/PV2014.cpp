@@ -1,8 +1,8 @@
-#include "PV2014.h"
 #include <Windows.h>
 #include <iostream>
-#include "Semaphore.h"
-#include "ThreadLauncher.h"
+#include "../../include/uestc/PV2014.h"
+#include "../../include/Semaphore.h"
+#include "../../include/ThreadLauncher.h"
 
 namespace
 {

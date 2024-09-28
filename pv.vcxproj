@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\tools\pthreads-w32-2-9-1-release\Pre-built.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>D:\tools\pthreads-w32-2-9-1-release\Pre-built.2\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\workspace\vs\pv\lib\pthreads-w32-2-9-1-release\Pre-built.2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\workspace\vs\pv\lib\pthreads-w32-2-9-1-release\Pre-built.2\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -132,34 +132,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="demo.h" />
-    <ClInclude Include="PV2013.h" />
-    <ClInclude Include="PV2014.h" />
-    <ClInclude Include="PV2016.h" />
-    <ClInclude Include="PV2017.h" />
-    <ClInclude Include="PV2018.h" />
-    <ClInclude Include="PV2020.h" />
-    <ClInclude Include="PV2021.h" />
-    <ClInclude Include="PV2022.h" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="Semaphore.h" />
-    <ClInclude Include="semaphore_demo.h" />
-    <ClInclude Include="ThreadLauncher.h" />
+    <ClInclude Include="include\demo.h" />
+    <ClInclude Include="include\Semaphore.h" />
+    <ClInclude Include="include\semaphore_demo.h" />
+    <ClInclude Include="include\ThreadLauncher.h" />
+    <ClInclude Include="include\uestc\PV2013.h" />
+    <ClInclude Include="include\uestc\PV2014.h" />
+    <ClInclude Include="include\uestc\PV2016.h" />
+    <ClInclude Include="include\uestc\PV2017.h" />
+    <ClInclude Include="include\uestc\PV2018.h" />
+    <ClInclude Include="include\uestc\PV2020.h" />
+    <ClInclude Include="include\uestc\PV2021.h" />
+    <ClInclude Include="include\uestc\PV2022.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="demo.cpp" />
-    <ClCompile Include="PV2013.cpp" />
-    <ClCompile Include="PV2014.cpp" />
-    <ClCompile Include="PV2016.cpp" />
-    <ClCompile Include="PV2017.cpp" />
-    <ClCompile Include="PV2018.cpp" />
-    <ClCompile Include="PV2020.cpp" />
-    <ClCompile Include="PV2021.cpp" />
-    <ClCompile Include="PV2022.cpp" />
-    <ClCompile Include="Semaphore.cpp" />
-    <ClCompile Include="semaphore_demo.cpp" />
-    <ClCompile Include="Startup.cpp" />
-    <ClCompile Include="ThreadLauncher.cpp" />
+    <ClCompile Include="src\demo.cpp" />
+    <ClCompile Include="src\Semaphore.cpp" />
+    <ClCompile Include="src\semaphore_demo.cpp" />
+    <ClCompile Include="src\Startup.cpp" />
+    <ClCompile Include="src\ThreadLauncher.cpp" />
+    <ClCompile Include="src\uestc\PV2013.cpp" />
+    <ClCompile Include="src\uestc\PV2014.cpp" />
+    <ClCompile Include="src\uestc\PV2016.cpp" />
+    <ClCompile Include="src\uestc\PV2017.cpp" />
+    <ClCompile Include="src\uestc\PV2018.cpp" />
+    <ClCompile Include="src\uestc\PV2020.cpp" />
+    <ClCompile Include="src\uestc\PV2021.cpp" />
+    <ClCompile Include="src\uestc\PV2022.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
