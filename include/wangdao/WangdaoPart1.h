@@ -1,4 +1,4 @@
-#ifndef WANGDAO_PART1_H_
+﻿#ifndef WANGDAO_PART1_H_
 #define WANGDAO_PART1_H_
 
 /*
