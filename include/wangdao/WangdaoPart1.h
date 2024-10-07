@@ -111,7 +111,7 @@ namespace WangdaoPart1_05 {
  */
 
 /*
- * 临界资源：水井、水缸		Semaphore well_mutex = 1, water_bin_mutex = 1;
+ * 临界资源：水井、水缸	Semaphore well_mutex = 1, water_bin_mutex = 1;
  * 资源：   水桶			Semaphore bucket = 3;
  * 同步关系：
  *		1、水缸未满	==> 小和尚拿水桶取水倒入水缸	Semaphore water_bin_empty = 10;
@@ -128,10 +128,29 @@ namespace WangdaoPart1_05 {
 		P(water_bin_mutex);
 		把水倒进水缸;
 		V(water_bin_mutex);
+		V(water_bin_full);
 		V(bucket); // 归还水桶
 	}
  }
+
+ 老和尚：
+ void senior_monk() {
+	while (1) {
+		P(water_bin_full);
+		P(bucket);
+		P(water_bin_mutex);
+		从水缸取水;
+		V(water_bin_mutex);
+		V(water_bin_empty);
+		V(bucket);
+	}
+ }
  */
+namespace WangdaoPart1_08 {
+	void* little_monk(void* args);
+	void* senior_monk(void* args);
+	void testWangdao08();
+}
 
 /*
  * 09.如下图所示，三个合作进程P1,P2,P3，它们都需要通过同一设备输入各自的数据a,b,c，该输入设备必须互斥地使用，
