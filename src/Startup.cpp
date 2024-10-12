@@ -36,7 +36,9 @@ int main(int argc, char* argv[]) {
 	//X7_5_driver::testX7_5_driver();
 
 
-	WangdaoPart1_05::testWangdao05();
+	//WangdaoPart1_05::testWangdao05();
+
+	WangdaoPart1_08::testWangdao08();
 
 	return 0;
 }
