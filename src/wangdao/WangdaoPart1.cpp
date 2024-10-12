@@ -1,8 +1,9 @@
-﻿#include <Windows.h>
+#include <Windows.h>
 #include <iostream>
 #include "../../include/wangdao/WangdaoPart1.h"
 #include "../../include/Semaphore.h"
 #include "../../include/ThreadLauncher.h"
+#include <vector>
 
 namespace WangdaoPart1_05 {
 
@@ -56,14 +57,17 @@ namespace WangdaoPart1_08 {
 
 	void* little_monk(void* args)
 	{
+		string monk_name = "【" + string((const char*)args) + "】";
 		while (true) {
 			P(water_bin_empty); // 水缸未满
 			P(bucket); // 拿一个水桶
 			P(well_mutex);
-			
+			cout << monk_name << "拿一个水桶从水井打水" << endl;
+			Sleep(500);
 			V(well_mutex);
 			P(water_bin_mutex);
-			把水倒进水缸;
+			cout << monk_name << "把水倒进水缸" << endl;
+			Sleep(500);
 			V(water_bin_mutex);
 			V(water_bin_full);
 			V(bucket); // 归还水桶
@@ -73,11 +77,13 @@ namespace WangdaoPart1_08 {
 
 	void* senior_monk(void* args)
 	{
+		string monk_name = "【" + string((const char*)args) + "】";
 		while (1) {
 			P(water_bin_full);
 			P(bucket);
 			P(water_bin_mutex);
-			从水缸取水;
+			cout << monk_name << "从水缸取水" << endl;
+			Sleep(500);
 			V(water_bin_mutex);
 			V(water_bin_empty);
 			V(bucket);
@@ -87,6 +93,9 @@ namespace WangdaoPart1_08 {
 
 	void testWangdao08()
 	{
+		std::vector<thread_func> funcs = { little_monk, little_monk, senior_monk, senior_monk };
+		std::vector<const char*> thread_names = { "小和尚1", "小和尚2", "老和尚1", "老和尚2"};
+		StartThread("王道08，小和尚挑水给老和尚喝", funcs, thread_names);
 	}
 
 }
