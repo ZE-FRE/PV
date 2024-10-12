@@ -3,39 +3,22 @@
 
 #include <string>
 #include <initializer_list>
+#include <vector>
 
-// ¶¨ÒåÏß³ÌËùÔËĞĞµÄº¯ÊıÀàĞÍ
+// å®šä¹‰çº¿ç¨‹æ‰€è¿è¡Œçš„å‡½æ•°ç±»å‹
 typedef void* (*thread_func)(void*);
 
-namespace ThreadLauncher {
-	/*
- * Æô¶¯Ïß³Ì
+/*
+ * å¯åŠ¨çº¿ç¨‹
  * params:
- * title£º±êÌâ
- * funcs£ºÏß³Ìº¯Êı³õÊ¼»¯ÁĞ±í
+ * titleï¼šæ ‡é¢˜
+ * funcsï¼šçº¿ç¨‹å‡½æ•°åˆå§‹åŒ–åˆ—è¡¨
  * date:2024/9/28
  */
-	void StartThread(const std::string& title, std::initializer_list<thread_func> funcs);
+void StartThread(const std::string& title, std::initializer_list<thread_func> funcs);
 
-	void StartThread(const std::string& title, std::initializer_list<Thread*> threads);
-
-	class Thread {
-
-	public:
-		Thread(const char* thread_name, thread_func func) :name(thread_name), run(func) { }
-
-		Thread(const Thread&) = delete;
-		Thread& operator=(const Thread&) = delete;
-
-	private:
-		// Ïß³ÌÃû
-		const char* name;
-		// Ïß³ÌÔËĞĞº¯Êı
-		thread_func run;
-
-	};
-
-}
+void StartThread(const std::string& title, const std::vector<thread_func>& threads,
+	const std::vector<const char*>& thread_names);
 
 #endif // !THREAD_LAUNCHER_H_
 
