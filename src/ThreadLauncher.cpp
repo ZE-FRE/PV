@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void ThreadLauncher::StartThread(const string& title, initializer_list<thread_func> funcs)
+void StartThread(const string& title, initializer_list<thread_func> funcs)
 {
     cout << title << "\n" << endl;
 
@@ -29,17 +29,16 @@ void ThreadLauncher::StartThread(const string& title, initializer_list<thread_fu
         free(thread_id);
 }
 
-void ThreadLauncher::StartThread(const std::string& title, std::initializer_list<Thread*> threads) {
+void StartThread(const string& title, const vector<thread_func>& funcs, const vector<const char*>& thread_names) {
     cout << title << "\n" << endl;
 
     vector<pthread_t*> thread_ids;
 
-    for (auto beg = threads.begin(); beg != threads.end(); ++beg) {
+    for (int i = 0; i < funcs.size(); ++i) {
         pthread_t* thread_id = (pthread_t*)malloc(sizeof(pthread_t));
-        pthread_create(thread_id, NULL, (*beg).run, beg->name);
+        pthread_create(thread_id, NULL, funcs[i], (void*)thread_names[i]);
         thread_ids.push_back(thread_id);
     }
-
 
     Sleep(10000);
 
