@@ -1,4 +1,4 @@
-#ifndef THREAD_LAUNCHER_H_
+﻿#ifndef THREAD_LAUNCHER_H_
 #define THREAD_LAUNCHER_H_
 
 #include <string>
