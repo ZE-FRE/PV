@@ -4,7 +4,7 @@
 #include "../include/uestc/PV2014.h"
 #include "../include/uestc/PV2016.h"
 #include "../include/uestc/PV2017.h"
-
+#include "../include/uestc/PV2018.h"
 #include "../include/uestc/PV2020.h"
 #include "../include/uestc/PV2021.h"
 
@@ -25,6 +25,7 @@ int main(int argc, char* argv[]) {
 
 	//PV2014::testPV2014();
 
+	PV2018::testPV2018();
 
 	//PV2017::testPV2017();
 
@@ -38,7 +39,11 @@ int main(int argc, char* argv[]) {
 
 	//WangdaoPart1_05::testWangdao05();
 
-	WangdaoPart1_08::testWangdao08();
+	//WangdaoPart1_06::testWangdao06();
+
+	//WangdaoPart1_08::testWangdao08();
+
+	//WangdaoPart1_09::testWangdao09();
 
 	return 0;
 }
