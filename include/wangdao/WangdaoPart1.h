@@ -1,4 +1,4 @@
-﻿#ifndef WANGDAO_PART1_H_
+#ifndef WANGDAO_PART1_H_
 #define WANGDAO_PART1_H_
 
 /*
@@ -51,12 +51,43 @@ namespace WangdaoPart1_05 {
  */
 
 /*
+ * date:2024/10/14
+ * 同步关系：
+ *		1、销售人员叫号，唤醒一个顾客	Semaphore ticket = 0;
+ *		2、没有顾客，销售人员等待，顾客进店，唤醒销售人员	Semaphore customer_count = 0;
+ * 伪代码如下：
+ 销售人员：
+ void salesperson() {
+	 while (1) {
+		P(customer_count); // 等待客户进店
+		V(ticket); // 叫号
+		// 推销
+	}
+ }
+
+ 顾客：
+ void customer() {
+	 while (1) {
+		V(customer_count); // 客户进店，增加客户数量
+		P(ticket); // 取号
+		// 接受推销
+	}
+ }
+ */
+namespace WangdaoPart1_06 {
+	void* salesperson(void* args);
+	void* customer(void* args);
+	void testWangdao06();
+}
+
+/*
  * 07.某工厂有两个生产车间和一个装配车间，两个生产车间分别生产A,B两种零件，装配车间的任务是把A,B两种零件组装成产品。
  * 两个生产车间每生产一个零件后，都要分别把它们送到专配车间的货架F1,F2上。F1存放零件A，F2存放零件B，F1和F2的容量均可存放10个零件。
  * 装配工人每次从货架上取一个零件A和一个零件B后组装成产品。请用P,V操作进行正确管理。
  */
 
 /*
+ * date:2024/9/29
  * 临界资源：货架F1，F2	Semaphore F1_mutex = 1, F2_mutex = 1;
  * 同步关系：
  *		1、F1货架未满	==> 车间1将产品A放到F1货架		Semaphore F1_empty = 10;
@@ -111,6 +142,7 @@ namespace WangdaoPart1_05 {
  */
 
 /*
+ * date:2024/9/30
  * 临界资源：水井、水缸	Semaphore well_mutex = 1, water_bin_mutex = 1;
  * 资源：   水桶			Semaphore bucket = 3;
  * 同步关系：
@@ -172,6 +204,63 @@ namespace WangdaoPart1_08 {
  *						+-------+
  */
 
+/*
+ * date:2024/10/14
+ * 临界资源：非抢占式输入设备	Semaphore device_mutex = 1;
+ * 同步关系：
+ *		1、P2已读入第二个数据并存入b中，唤醒P1进程，计算x	Semaphore P2_read = 0;
+ *		2、P1已读入第一个数据并存入a中，唤醒P2进程，计算y	Semaphore P1_read = 0;
+ *		3、P2已计算出y的值	，唤醒P3进程，计算z			Semaphore P2_y_finished = 0; 取值范围：-2到2
+ *		4、P2已计算出y，P3已计算出z，唤醒P1进程，将x、y、z的值输出到打印机	Semaphore P3_z_finished = 0;
+ * 伪代码如下：
+ P1进程：
+void P1() {
+	 while (1) {
+		P(device_mutex);
+		a = 第一个数据; // P1读取第一个数据
+		V(device_mutex);
+		V(P1_read);
+		P(P2_read); // 等待P2进程读取b
+		x = a + b; // 计算x
+		P(P2_y_finished); // 等待P2进程计算出y的值
+		P(P3_z_finished); // 等待P3进程计算出z的值
+		打印x、y、z
+	 }
+}
+
+P2进程：
+void P2() {
+	while (1) {
+		P(device_mutex);
+		b = 第二个数据;
+		V(device_mutex);
+		V(P2_read);
+		P(P1_read); // 等待P1进程读取a
+		y = a * b;	// 计算y
+		V(P2_y_finished);
+		V(P2_y_finished);
+	}
+}
+
+P3进程：
+void P3() {
+	while (1) {
+		P(device_mutex);
+		c = 第三个数据;
+		V(device_mutex);
+		P(P2_y_finished);
+		z = y + c - a;
+		V(P3_z_finished);
+	}
+}
+ */
+
+namespace WangdaoPart1_09 {
+	void* P1(void* args);
+	void* P2(void* args);
+	void* P3(void* args);
+	void testWangdao09();
+}
 
 
 #endif // !WANGDAO_PART1_H_
