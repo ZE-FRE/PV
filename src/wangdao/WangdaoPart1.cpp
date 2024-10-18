@@ -47,6 +47,46 @@ namespace WangdaoPart1_05 {
 
 }
 
+namespace WangdaoPart1_06 {
+
+	using namespace std;
+
+	Semaphore ticket = 0;
+	Semaphore customer_count = 0;
+
+	void* salesperson(void* args)
+	{
+		string salesperson_name = string("【") + (char*)args + "】";
+		while (true) {
+			P(customer_count);
+			V(ticket);
+			cout << salesperson_name << "向顾客推销面包" << endl;
+			Sleep(1200);
+		}
+		return nullptr;
+	}
+	void* customer(void* args)
+	{
+		string customer_name = string("【") + (char*)args + "】";
+		while (true) {
+			cout << customer_name << "进店" << endl;
+			V(customer_count);
+			P(ticket);
+			cout << customer_name << "接受推销" << endl;
+			Sleep(1500);
+		}
+		return nullptr;
+	}
+
+	void testWangdao06()
+	{
+		std::vector<thread_func> funcs = { salesperson, salesperson, salesperson, customer, customer };
+		std::vector<const char*> thread_names = { "销售1", "销售2", "销售3", "顾客1", "顾客2"};
+		StartThread("王道06，面包店，销售人员与顾客", funcs, thread_names);
+	}
+
+}
+
 
 namespace WangdaoPart1_08 {
 	Semaphore well_mutex = 1, water_bin_mutex = 1;
@@ -96,6 +136,76 @@ namespace WangdaoPart1_08 {
 		std::vector<thread_func> funcs = { little_monk, little_monk, senior_monk, senior_monk };
 		std::vector<const char*> thread_names = { "小和尚1", "小和尚2", "老和尚1", "老和尚2"};
 		StartThread("王道08，小和尚挑水给老和尚喝", funcs, thread_names);
+	}
+
+}
+
+namespace WangdaoPart1_09 {
+
+	using namespace std;
+
+	Semaphore device_mutex = 1;
+	Semaphore P2_read = 0;
+	Semaphore P1_read = 0;
+	Semaphore P2_y_finished = 0;
+	Semaphore P3_z_finished = 0;
+
+	int a, b, c, x, y, z;
+
+	void* P1(void* args)
+	{
+		while (true) {
+			P(device_mutex);
+			a = 10; // P1读取第一个数据
+			V(device_mutex);
+			V(P1_read);
+			P(P2_read); // 等待P2进程读取b
+			cout << "P1进程计算x的值" << endl;
+			x = a + b; // 计算x
+			P(P2_y_finished); // 等待P2进程计算出y的值
+			P(P3_z_finished); // 等待P3进程计算出z的值
+			// 打印x、y、z
+			cout << "P1进程打印x、y、z的值。" << "x=" << x << ",y=" << y << ",z=" << z << endl;
+			Sleep(1000);
+		}
+		return nullptr;
+	}
+
+	void* P2(void* args)
+	{
+		while (true) {
+			P(device_mutex);
+			b = 5;
+			V(device_mutex);
+			V(P2_read);
+			P(P1_read); // 等待P1进程读取a
+			cout << "P2进程计算y的值" << endl;
+			y = a * b;	// 计算y
+			V(P2_y_finished);
+			V(P2_y_finished);
+			Sleep(1000);
+		}
+		return nullptr;
+	}
+
+	void* P3(void* args)
+	{
+		while (1) {
+			P(device_mutex);
+			c = 4;
+			V(device_mutex);
+			P(P2_y_finished);
+			cout << "P3进程计算z的值" << endl;
+			z = y + c - a;
+			V(P3_z_finished);
+			Sleep(1000);
+		}
+		return nullptr;
+	}
+
+	void testWangdao09()
+	{
+		StartThread("王道09", { P1, P2, P3 });
 	}
 
 }
